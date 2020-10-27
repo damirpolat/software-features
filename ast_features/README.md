@@ -6,11 +6,11 @@ First, you want to extract the Abstract Syntax Tree of your algorithm as constru
 To do so, you can simply dump the ast in a file when compiling it. A typical make file would then look like this:
 
 ```
-	CC	= 	clang++
+CC = clang++
 
 .c:
-		$(CC) -o $@ $< -Xclang -ast-dump -fsyntax-only -fno-color-diagnostics > $<.ast
-		$(CC) -o $@ $< 
+	$(CC) -o $@ $< -Xclang -ast-dump -fsyntax-only -fno-color-diagnostics > $<.ast
+	$(CC) -o $@ $< 
 ```
 
 This would create for each file `source.c` an ast file `source.c.ast`
@@ -20,6 +20,6 @@ This would create for each file `source.c` an ast file `source.c.ast`
 The `compure_features.py` script computes features for a set of ast dump files. It requires the libraries Scipy and NetworkX.
 To use it, call:
 ```
-	python3 ./compute_features.py <list of files separated by space>
+python3 ./compute_features.py <list of files separated by space>
 ```
 The features value for the specified list of files will be printed in your terminal.
