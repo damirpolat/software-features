@@ -107,6 +107,5 @@ if __name__ =='__main__':
           +"nb_unique_inst,"
           +','.join(inst_names)
           +",nb_unique_jumps,"
-          +','.join(jump_names)
-          +"\n")
-    print(",".join([str(f) for f in features])+"\n")
+          +','.join(jump_names))
+    print(sys.argv[2]+","+",".join([str(f) for f in features]))
